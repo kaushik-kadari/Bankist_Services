@@ -1,7 +1,7 @@
 let accounts;
 
 let getData = async () => {
-  fetch('http://localhost:3000/data')
+  fetch('http://localhost:5000/data')
   .then(response => response.json())
   .then(data => {
     accounts = data;
@@ -38,7 +38,7 @@ getData();
 ///////////////////////////////////////////////////////////
 
 function saveandget() {
-  fetch('http://localhost:3000/updateData', {
+  fetch('http://localhost:5000/updateData', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ function saveandget() {
 }
 
 function deleteAccount(acc) {
-  fetch('http://localhost:3000/delete', {
+  fetch('http://localhost:5000/delete', {
     method: 'DELETE',
     headers: {
         'Content-Type': 'application/json'

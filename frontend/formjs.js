@@ -6,7 +6,7 @@ const inputPassword = document.querySelector('.set-password');
 let accounts;
 
 let getData = async () => {
-  fetch('http://localhost:3000/data')
+  fetch('http://localhost:5000/data')
   .then(response => response.json())
   .then(data => {
     accounts = data;
@@ -18,7 +18,7 @@ getData();
 
 
 function saveandget() {
-    fetch('http://localhost:3000/updateData', {
+    fetch('http://localhost:5000/updateData', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
