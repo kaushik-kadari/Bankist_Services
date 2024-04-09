@@ -6,7 +6,7 @@ const inputPassword = document.querySelector('.set-password');
 let accounts;
 
 let getData = async () => {
-  fetch('http://localhost:5000/data')
+  fetch('https://bankist-v4rm.onrender.com/data')
   .then(response => response.json())
   .then(data => {
     accounts = data;
@@ -18,7 +18,7 @@ getData();
 
 
 function saveandget() {
-    fetch('http://localhost:5000/updateData', {
+    fetch('https://bankist-v4rm.onrender.com/updateData', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
