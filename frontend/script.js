@@ -102,6 +102,7 @@ const labelSumIn = document.querySelector('.summary__value--in');
 const labelSumOut = document.querySelector('.summary__value--out');
 const labelSumInterest = document.querySelector('.summary__value--interest');
 const labelTimer = document.querySelector('.timer');
+const labelMsg = document.querySelector('.msg');
 
 const containerApp = document.querySelector('.app');
 const containerMovements = document.querySelector('.movements');
@@ -254,9 +255,9 @@ btnLogin.addEventListener('click', function (e) {
 
   if (currentAccount?.pin == inputLoginPin.value) {
     // Display UI and message
-    labelWelcome.textContent = `Welcome back, ${
+    labelMsg.innerHTML = `<p class="welcome"> Welcome back, ${
       currentAccount.owner.split(' ')[0]
-    }`;
+    } </p>`;
     containerApp.style.opacity = 100;
 
     // Clear input fields
@@ -357,7 +358,7 @@ btnClose.addEventListener('click', function (e) {
     containerApp.style.opacity = 0;
     sleep(500);
 
-    labelWelcome.innerHTML = `<p class="welcome">Log in to get started / <span class="signup">Create Account</span></p>`;
+    labelMsg.innerHTML = `<p class="welcome">Log in to get started / <span class="signup">Create Account</span></p>`;
   }
   else {
     updateAlert(`<strong>Hey ${currentAccount.owner.split(' ')[0]}!</strong> Please check your account credentials.`);

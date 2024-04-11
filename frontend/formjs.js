@@ -17,7 +17,7 @@ let getData = async () => {
 getData();
 
 
-function saveandget() {
+async function saveandget() {
     fetch('https://bankist-v4rm.onrender.com/updateData', {
       method: 'POST',
       headers: {
@@ -40,17 +40,17 @@ function saveandget() {
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-btnRegister.addEventListener('click', async (e) => {
+btnRegister.addEventListener('submit', async (e) => {
     e.preventDefault(); 
     const newName = inputFirstName.value + " " + inputLastName.value;
     const newPin = inputPassword.value;
     if(!newName || !newPin) return;
     const newAcc = {owner: newName, pin: newPin,  movements: [1000], interestRate: 1.2};
     console.log(newAcc);
+    accounts.push(newAcc);
+    await saveandget();
     body2.style.opacity = 0;
     await sleep(300);
-    accounts.push(newAcc);
-    saveandget();
     window.location.href = "index.html";
   })
   
