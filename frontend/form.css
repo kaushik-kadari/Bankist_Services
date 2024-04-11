@@ -4,9 +4,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-image: url('banking.jpg');
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
+    background-position:bottom;
 }
 
 .form {
@@ -15,8 +16,8 @@
     gap: 10px;
     max-width: 350px;
     background: rgba(255, 255, 255, 0.251);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 40px 0 rgba(31, 38, 135, 0.53);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 40px 0 rgba(31, 38, 135, 0.696);
     padding: 20px;
     border-radius: 20px;
     position: relative;
@@ -88,7 +89,7 @@
     outline: 0;
     border: 1px solid rgba(105, 105, 105, 0.32);
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.404);
+    background: rgba(255, 255, 255, 0.361);
   }
   
   .form label .input + span, .input + p {

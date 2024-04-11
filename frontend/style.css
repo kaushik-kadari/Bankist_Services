@@ -1,9 +1,3 @@
-/*
- * Use this CSS to learn some intersting techniques,
- * in case you're wondering how I built the UI.
- * Have fun! 😁
- */
-
 * {
   margin: 0;
   padding: 0;
@@ -310,7 +304,20 @@ h2 {
   padding: 0 0.3rem;
   margin-top: 1.9rem;
   text-align: right;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+}
+
+.logout {
+  margin-left: 10px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.logout:hover {
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .timer {
@@ -321,7 +328,6 @@ h2 {
   height: 6vh;
   width: 67%;
   font-size: 1.6rem;
-  /* display: none; */
 }
 
 .msg {
@@ -359,5 +365,10 @@ h2 {
   .arrow {
     margin: 25px;
     font-size: 1.7rem;
+  }
+  .alert {
+    height: 5vh;
+    width: 100vw;
+    font-size: 1.3rem;
   }
 }

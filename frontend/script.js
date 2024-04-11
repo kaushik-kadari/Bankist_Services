@@ -1,3 +1,44 @@
+// Elements
+const body2 = document.getElementById('body2');
+const body1 = document.getElementById('body1');
+
+const labelWelcome = document.querySelector('.welcome');
+const labelDate = document.querySelector('.date');
+const labelBalance = document.querySelector('.balance__value');
+const labelSumIn = document.querySelector('.summary__value--in');
+const labelSumOut = document.querySelector('.summary__value--out');
+const labelSumInterest = document.querySelector('.summary__value--interest');
+const labelTimer = document.querySelector('.timer');
+const labelMsg = document.querySelector('.msg');
+
+const containerApp = document.querySelector('.app');
+const containerMovements = document.querySelector('.movements');
+
+const btnLogin = document.querySelector('.login__btn');
+const btnTransfer = document.querySelector('.form__btn--transfer');
+const btnLoan = document.querySelector('.form__btn--loan');
+const btnClose = document.querySelector('.form__btn--close');
+const btnSort = document.querySelector('.btn--sort');
+const btnCA = document.querySelector('.signup');
+const btnRegister = document.querySelector('.btn-register');
+const btnLogout = document.querySelector('.logout');
+
+const inputLoginUsername = document.querySelector('.login__input--user');
+const inputLoginPin = document.querySelector('.login__input--pin');
+const inputTransferTo = document.querySelector('.form__input--to');
+const inputTransferAmount = document.querySelector('.form__input--amount');
+const inputLoanAmount = document.querySelector('.form__input--loan-amount');
+const inputCloseUsername = document.querySelector('.form__input--user');
+const inputClosePin = document.querySelector('.form__input--pin');
+const inputFirstName = document.querySelector('.first-name');
+const inputLastName = document.querySelector('.last-name');
+const inputPassword = document.querySelector('.set-password');
+
+const alertDiv = document.querySelector('.alertdiv');
+
+/////////////////////////////////////////////////
+// Functions
+
 let accounts;
 
 let getData = async () => {
@@ -5,7 +46,7 @@ let getData = async () => {
   .then(response => response.json())
   .then(data => {
     accounts = data;
-    console.log(data);
+    // console.log(data);
     accounts = accounts.filter((acc) => !isDummy(acc));
     createUsernames(accounts);
   })
@@ -34,8 +75,6 @@ getData();
 //   saveArrayToLocalStorage("Accounts", accounts);
 //   accounts = getArrayFromLocalStorage("Accounts");
 // }
-
-///////////////////////////////////////////////////////////
 
 function saveandget() {
   fetch('https://bankist-v4rm.onrender.com/updateData', {
@@ -85,51 +124,6 @@ function isDummy(obj) {
   // Assuming accounts is a global variable
   return obj.owner.trim() === '';
 }
-
-// accounts = [account1, account2, account3, account4];
-
-// saveArrayToLocalStorage("Accounts", accounts);
-
-/////////////////////////////////////////////////
-// Elements
-const body2 = document.getElementById('body2');
-const body1 = document.getElementById('body1');
-
-const labelWelcome = document.querySelector('.welcome');
-const labelDate = document.querySelector('.date');
-const labelBalance = document.querySelector('.balance__value');
-const labelSumIn = document.querySelector('.summary__value--in');
-const labelSumOut = document.querySelector('.summary__value--out');
-const labelSumInterest = document.querySelector('.summary__value--interest');
-const labelTimer = document.querySelector('.timer');
-const labelMsg = document.querySelector('.msg');
-
-const containerApp = document.querySelector('.app');
-const containerMovements = document.querySelector('.movements');
-
-const btnLogin = document.querySelector('.login__btn');
-const btnTransfer = document.querySelector('.form__btn--transfer');
-const btnLoan = document.querySelector('.form__btn--loan');
-const btnClose = document.querySelector('.form__btn--close');
-const btnSort = document.querySelector('.btn--sort');
-const btnCA = document.querySelector('.signup');
-const btnRegister = document.querySelector('.btn-register');
-
-const inputLoginUsername = document.querySelector('.login__input--user');
-const inputLoginPin = document.querySelector('.login__input--pin');
-const inputTransferTo = document.querySelector('.form__input--to');
-const inputTransferAmount = document.querySelector('.form__input--amount');
-const inputLoanAmount = document.querySelector('.form__input--loan-amount');
-const inputCloseUsername = document.querySelector('.form__input--user');
-const inputClosePin = document.querySelector('.form__input--pin');
-const inputFirstName = document.querySelector('.first-name');
-const inputLastName = document.querySelector('.last-name');
-const inputPassword = document.querySelector('.set-password');
-
-const alertDiv = document.querySelector('.alertdiv');
-
-/////////////////////////////////////////////////
-// Functions
 
 const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
@@ -187,7 +181,7 @@ const createUsernames = async function (accs) {
       .map(name => name[0])
       .join('');
   });
-  console.log(accs);
+  // console.log(accs);
 };
 
 const startLogoutTimer = () => {
@@ -201,7 +195,7 @@ const startLogoutTimer = () => {
 
     if(time === 0) {
       clearInterval(timer);
-      labelWelcome.textContent = 'Log in to get started';
+      labelMsg.innerHTML = `<p class="welcome">Log in to get started / <span class="signup">Create Account</span></p>`;
       containerApp.style.opacity = 0;
     }
 
@@ -334,6 +328,11 @@ btnLoan.addEventListener('click', function (e) {
   inputLoanAmount.value = '';
 });
 
+btnLogout.addEventListener('click', () => {
+  labelMsg.innerHTML = `<p class="welcome">Log in to get started / <span class="signup">Create Account</span></p>`;
+  containerApp.style.opacity = 0;
+});
+
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
 
@@ -383,8 +382,5 @@ btnCA.addEventListener('click', async (e) => {
   e.preventDefault();
   body1.style.opacity = 0;
   await sleep(500);
-  // body1.outerHTML = body2.outerHTML;
   window.location.href = "form.html";
-})
-
-// console.log(accounts);
+});
