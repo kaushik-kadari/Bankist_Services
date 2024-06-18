@@ -63,8 +63,8 @@ Banking/
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/banking-app.git
-    cd banking-app
+    git clone https://github.com/kaushik0126/Bankist_Services
+    cd Bankist_Services
     ```
 
 2. **Install backend dependencies:**
