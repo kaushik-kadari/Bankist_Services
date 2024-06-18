@@ -1,5 +1,3 @@
-### README for Banking Application
-
 # Banking Application
 
 This is a comprehensive banking application developed using HTML, CSS, and JavaScript for the frontend, and Express.js for the backend. The application allows users to register, login, transfer money, request loans, and view their transaction history. The backend is connected to a MongoDB database for data storage.
