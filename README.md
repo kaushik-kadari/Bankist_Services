@@ -61,7 +61,7 @@ Banking/
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/kaushik0126/Bankist_Services
+    git clone https://github.com/kaushik0126/Bankist_Services.git
     cd Bankist_Services
     ```
 
