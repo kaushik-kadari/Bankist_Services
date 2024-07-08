@@ -118,7 +118,7 @@ Banking/
 
 ## Live Demo
 
-Check out the live demo of the application [here](bankist-services.netlify.app).
+Check out the live demo of the application [here](https://bankist-services.netlify.app/).
 
 ## Screenshots
 
